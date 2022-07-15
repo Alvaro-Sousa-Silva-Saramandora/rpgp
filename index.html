@@ -53,6 +53,11 @@
       background-color: var(--cor2);
    }
 
+   #code {
+      width: 90%;
+      margin: auto;
+   }
+
    </style>
 
 </head>
@@ -67,45 +72,42 @@
 
          <h1>Pilares & Atributos</h1>
 
-            <h2>Mente <input> </h2>
+            <h2>Mente <input class="atr" > </h2>
                <ul>
                   <il>
-                     <p>Inteligência  <input> </p>
+                     <p>Inteligência  <input class="atr"> </p>
                   </il>
                   <il>
-                     <p>Social <input> </p>
+                     <p>Social <input class="atr"> </p>
                   </il>
                   <il>
-                     <p>percepção <input> </p>
+                     <p>percepção <input class="atr"> </p>
                   </il>
                </ul>
             
 <!-- #################### -->
             
-            <h2>Corpo <input> </h2>
+            <h2>Corpo <input class="atr"> </h2>
                <ul>
                   <il>
-                     <p>Força <input> </p>
+                     <p>Força <input class="atr"> </p>
                   </il>
                   <il>
-                     <p>Agilidade <input> </p>
+                     <p>Agilidade <input class="atr"> </p>
                   </il>
                   <il>
-                     <p>Vigor <input> </p>
+                     <p>Vigor <input class="atr"> </p>
                   </il>
                </ul>
 <!-- #################### -->
             
-               <h2>Consciência <input> </h2>
+               <h2>Consciência <input class="atr"> </h2>
                <ul>
                   <il>
-                     <p>Sanidade <input> </p>
+                     <p>Sanidade <input class="atr"> </p>
                   </il>
                   <il>
-                     <p>Insanidade <input> </p>
-                  </il>
-                  <il>
-                     <p>Estar <input> </p>
+                     <p>Insanidade <input class="atr"> </p>
                   </il>
                </ul>
 <!-- #################### -->
@@ -115,26 +117,53 @@
 <!-- _________________________ -->
 
       <article>
-         <h1>YOOOOOOO</h1>
+
+         <h1>Carregar/Salvar Ficha</h1>
+
+         <input id="code">
+         <button onclick="CreateCookie()">Salvar</button>
+         <button onclick="ReadCookie()">Carregar</button>
+
       </article>
 
    </main>
 
-<input type="file" id="demo">
+   <script>
 
-<br>
-
-<button onclick="show()">SHOW</button>
-
-<br>
-<br>
-<br>
-
-<script>
-   function show(){
-      var txt = document.getElementById("demo")
-      document.write(txt.innerHTML)
+   let atr_v = document.getElementsByClassName("atr")
+   for(var i in atr_v){
+      atr_v[i].value = document.cookie.split(",")[i]
    }
+
+   
+function TakeAllAtr(){
+
+   let a = []
+   let atr_class = document.getElementsByClassName("atr")
+
+   for(var i of atr_class){
+      a.push(i.value)
+   }
+
+   return a
+}
+   //alert(atr_class)
+
+   function CreateCookie(){
+
+      vl = TakeAllAtr()
+
+      let data = ""
+      let value = String(vl)
+      document.cookie = value
+   }
+
+   function ReadCookie(){
+      var cookie = document.cookie.split(";")
+      alert(cookie)
+      return cookie;
+   }
+
    </script>
 
 
