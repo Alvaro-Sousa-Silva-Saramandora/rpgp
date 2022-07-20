@@ -68,53 +68,48 @@
    </header>
 
    <main>
+<!--
       <article>
 
          <h1>Pilares & Atributos</h1>
 
-            <h2>Mente <input class="atr" > </h2>
+            <h2>Mente <input type="number" class="atr" > </h2>
                <ul>
                   <il>
-                     <p>Inteligência  <input class="atr"> </p>
+                     <p>Inteligência <input type="number" class="atr" value="0" > </p>
                   </il>
                   <il>
-                     <p>Social <input class="atr"> </p>
+                     <p>Social <input type="number" class="atr" value="0"> </p>
                   </il>
                   <il>
-                     <p>percepção <input class="atr"> </p>
+                     <p>percepção <input type="number" class="atr" value="0"> </p>
                   </il>
                </ul>
             
-<!-- #################### -->
-            
-            <h2>Corpo <input class="atr"> </h2>
+            <h2>Corpo <input type="number" class="atr" value="0"> </h2>
                <ul>
                   <il>
-                     <p>Força <input class="atr"> </p>
+                     <p>Força <input type="number" class="atr"> </p>
                   </il>
                   <il>
-                     <p>Agilidade <input class="atr"> </p>
+                     <p>Agilidade <input type="number" class="atr"> </p>
                   </il>
                   <il>
-                     <p>Vigor <input class="atr"> </p>
+                     <p>Vigor <input type="number" class="atr"> </p>
                   </il>
                </ul>
-<!-- #################### -->
             
-               <h2>Consciência <input class="atr"> </h2>
+               <h2>Consciência <input type="number" class="atr"> </h2>
                <ul>
                   <il>
-                     <p>Sanidade <input class="atr"> </p>
+                     <p>Sanidade <input type="number" class="atr"> </p>
                   </il>
                   <il>
-                     <p>Insanidade <input class="atr"> </p>
+                     <p>Insanidade <input type="number" class="atr"> </p>
                   </il>
                </ul>
-<!-- #################### -->
 
       </article>
-
-<!-- _________________________ -->
 
       <article>
 
@@ -125,12 +120,70 @@
          <button onclick="ReadCookie()">Carregar</button>
 
       </article>
+-->
+
+      <article>
+
+         <h1>Classes</h1>
+
+         <ul>
+
+            <il>Clérigo:<ul><p>3 inteligência</p> <p>2 Sanidade</p> <p>1 Percepção</p></ul> </il>
+
+            <il>Arqueiro: <ul><p>3 Agilidade</p> <p>2 Percepção</p> <p>1 Vigor</p></ul> </il>
+
+            <il>Guerreiro: <ul><p>3 Força</p> <p>2 Vigor</p> <p>1 Social</p></ul> </il>
+
+            <il>Caçador: <ul><p>3 Agilidade</p> <p>2 Força</p> <p>1 Vigor</p></ul></il>
+
+            <il>Bruxa: <ul><p>3 Sanidade</p> <p>2 Insanidade</p> <p>1 Inteligência</p></ul></il>
+
+         </ul>
+
+      </article>
+
+      <article>
+
+         <h1>Espécies</h1>
+
+         <ul>
+
+            <il>Humano <ul><p>NEUTRO</p></ul> </il>
+
+
+            <il>Avepina <ul><p>+2 Social</p> <p>-1 Força </p>
+<hr> <p>+2 Beleza</p> <p> +1 Flertar</p></ul> </il>
+<p>Similar a uma ave, mas com uma silhueta humana. Tendo de 2 a 
+3 cores de penas, que por sua vez cobre seu corpo. De 1,45 a 1,60.</p>
+
+
+            <il>Feliopedi <ul><p>+2 Agi6</p> <p>-1 Força </p>
+<hr> <p>+2 Cozinha</p> <p> +1 Educação</p></ul> </il>
+<p>Como Um pequeno Gato com forma humana, indo de 1,35 a 1,40.</p>
+
+
+            <il>Ferosi<ul><p>+2 Força</p> <p>-1 Inteligência </p>
+<hr> <p>+2 Esporte</p> <p> +1 Intimidar</p></ul> </il>
+<p>Grandes bípedes que podem chegar de 1,80 a 2,5. 
+ podem lembrar ursos, mas alguns se assemelham a lobos.</p>
+
+
+            <il>Repto<ul><p>+2 Inteligência</p> <p>-1 Agilidade</p>
+<hr> <p>+2 Religião</p> <p> +1 Política</p></ul> </il>
+<p>De estatura média a um humano, com similaridades a Salamandras e outros lagartos.</p>
+
+
+         </ul>
+
+      </article>
 
    </main>
 
+<!--
    <script>
 
    let atr_v = document.getElementsByClassName("atr")
+   alert(document.cookie[0])
    for(var i in atr_v){
       atr_v[i].value = document.cookie.split(",")[i]
    }
@@ -153,6 +206,8 @@ function TakeAllAtr(){
 
       vl = TakeAllAtr()
 
+      document.cookie = ""
+
       let data = ""
       let value = String(vl)
       document.cookie = value
@@ -164,7 +219,7 @@ function TakeAllAtr(){
       return cookie;
    }
 
-   </script>
+   </script> -->
 
 
 </body>
