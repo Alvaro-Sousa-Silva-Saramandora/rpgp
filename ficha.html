@@ -8,8 +8,106 @@
 </head>
 <body>
 
-<h1>Ficha De Personagem</h1>
-<p>wooooooooooooo</p>
+   <main>
+
+      <article>
+
+         <h1>Pilares & Atributos</h1>
+
+            <h2>Mente <input type="number" class="atr" > </h2>
+               <ul>
+                  <il>
+                     <p>Inteligência <input type="number" class="atr" value="0" > </p>
+                  </il>
+                  <il>
+                     <p>Social <input type="number" class="atr" value="0"> </p>
+                  </il>
+                  <il>
+                     <p>percepção <input type="number" class="atr" value="0"> </p>
+                  </il>
+               </ul>
+            
+            <h2>Corpo <input type="number" class="atr" value="0"> </h2>
+               <ul>
+                  <il>
+                     <p>Força <input type="number" class="atr"> </p>
+                  </il>
+                  <il>
+                     <p>Agilidade <input type="number" class="atr"> </p>
+                  </il>
+                  <il>
+                     <p>Vigor <input type="number" class="atr"> </p>
+                  </il>
+               </ul>
+            
+               <h2>Consciência <input type="number" class="atr"> </h2>
+               <ul>
+                  <il>
+                     <p>Sanidade <input type="number" class="atr"> </p>
+                  </il>
+                  <il>
+                     <p>Insanidade <input type="number" class="atr"> </p>
+                  </il>
+               </ul>
+
+      </article>
+
+      <article>
+
+         <h1>Carregar/Salvar Ficha</h1>
+
+         <input id="code">
+         <button onclick="CreateCookie()">Salvar</button>
+         <button onclick="ReadCookie()">Carregar</button>
+         <br> <button onclick="ClearCookie()">Limpar Cookies</button>
+
+         <a href="index.html">Ir para ficha</a>
+      </article>
+
+   </main>
+
+   <script>
+
+// LOAD COOKIES
+   var atr_v = document.getElementsByClassName("atr")
+
+   for(var i in atr_v){
+      atr_v[i].value = Number(document.cookie.split(",")[i])
+   }
+
+//F
+function TakeAllAtr(){
+   let a = []
+   let atr_class = document.getElementsByClassName("atr")
+
+   for(var i of atr_class){
+      a.push(Number(i.value))
+   }
+
+   return String(a)
+}
+   
+//F
+   function CreateCookie(){
+      var data = 'expires=Thu, 18 Dec 2099 12:00:00 UTC'
+
+      document.cookie = TakeAllAtr() + ";" + data
+   }
+
+//F
+   function ReadCookie(){
+      var cookie = document.cookie.split(";")
+      alert(cookie)
+      return cookie;
+   }
+
+   function ClearCookie(){
+      document.cookie = 'expires=Thu, 18 Dec 2009 12:00:00 UTC'
+      alert("Cookies Limpos " + document.cookie)
+   }
+
+   </script>
+
 
 </body>
 </html>
