@@ -1,0 +1,32 @@
+:root {
+   --darkColor: #335;
+   --lightColor: #fff;
+   --midColor: #888;
+}
+
+#add-obj {
+   margin: 5%;
+}
+
+input {
+   width: 7%;
+}
+
+button {
+   background-color: var(--lightColor);
+   color: var(--darkColor);
+}
+
+button:hover, input:hover{
+   background-color: var(--darkColor);
+   color: var(--lightColor);
+
+   /*width: 15%;*/
+}
+
+canvas {
+   border: 3px solid #000;
+   width: 100%;
+   height: 50%;
+   margin: auto;
+}
