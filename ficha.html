@@ -16,39 +16,39 @@
 
          <h1>Pilares & Atributos</h1>
 
-            <h2>Mente <input type="number" class="atr" > </h2>
+            <h2>Mente <input type="number" class="atr" id="mente"> </h2>
                <ul>
                   <il>
-                     <p>Inteligência <input type="number" class="atr" value="0" > </p>
+                     <p>Inteligência <input type="number" class="atr" value="0" id="inteligencia"> </p>
                   </il>
                   <il>
-                     <p>Social <input type="number" class="atr" value="0"> </p>
+                     <p>Social <input type="number" class="atr" value="0" id="social"> </p>
                   </il>
                   <il>
-                     <p>percepção <input type="number" class="atr" value="0"> </p>
+                     <p>percepção <input type="number" class="atr" value="0" id="percepcao"> </p>
                   </il>
                </ul>
             
-            <h2>Corpo <input type="number" class="atr" value="0"> </h2>
+            <h2>Corpo <input type="number" class="atr" value="0" id="corpo"> </h2>
                <ul>
                   <il>
-                     <p>Força <input type="number" class="atr"> </p>
+                     <p>Força <input type="number" class="atr" id="forca"> </p>
                   </il>
                   <il>
-                     <p>Agilidade <input type="number" class="atr"> </p>
+                     <p>Agilidade <input type="number" class="atr" id="agilidade"> </p>
                   </il>
                   <il>
-                     <p>Vigor <input type="number" class="atr"> </p>
+                     <p>Vigor <input type="number" class="atr" id="vigor"> </p>
                   </il>
                </ul>
             
-               <h2>Consciência <input type="number" class="atr"> </h2>
+               <h2>Consciência <input type="number" class="atr" id="consciencia"> </h2>
                <ul>
                   <il>
-                     <p>Sanidade <input type="number" class="atr"> </p>
+                     <p>Sanidade <input type="number" class="atr" id="sanidade"> </p>
                   </il>
                   <il>
-                     <p>Insanidade <input type="number" class="atr"> </p>
+                     <p>Insanidade <input type="number" class="atr" id="insanidade"> </p>
                   </il>
                </ul>
 
@@ -59,11 +59,29 @@
          <h1>Carregar/Salvar Ficha</h1>
 
          <input id="code">
-         <button onclick="CreateCookie()">Salvar</button>
+         <button onclick="CreateCookie('9')">Salvar</button>
          <button onclick="ReadCookie()">Carregar</button>
-         <br> <button onclick="ClearCookie()">Limpar Cookies</button>
+         <br> <button onclick="CreateCookie('0')">Limpar Cookies</button>
 
          <a href="index.html">Ir para ficha</a>
+      </article>
+
+      <article>
+         <h1>Uso Para Cada Atributo</h1>
+
+         <ol type="I">
+           <il><p> Inteligência: </p></il>
+           <il><p> Vigilância: </p></il>
+           <il><p> Social: </p></il>
+           <hr>
+           <il><p> Força: </p></il>
+           <il><p> Agilidade: </p></il>
+           <il><p> Vigor: </p></il>
+           <hr>
+           <il><p> Sanidade: </p></il>
+           <il><p> Insanidade: </p></il>
+         </ol>
+
       </article>
 
    </main>
@@ -71,11 +89,15 @@
    <script>
 
 // LOAD COOKIES
-   var atr_v = document.getElementsByClassName("atr")
+var atr_v = document.getElementsByClassName("atr")
+let saved_v = document.cookie.split(";")
+let save = saved_v[0].split(",")
+alert(save.split("="))
 
-   for(var i in atr_v){
-      atr_v[i].value = Number(document.cookie.split(",")[i])
-   }
+/*
+for(var i in atr_v){
+   if(atr_v[i].id === )
+}*/
 
 //F
 function TakeAllAtr(){
@@ -83,30 +105,34 @@ function TakeAllAtr(){
    let atr_class = document.getElementsByClassName("atr")
 
    for(var i of atr_class){
-      a.push(Number(i.value))
+      a.push(`${i.id}=${i.value},`)
    }
 
-   return String(a)
+alert(a)
+
+   return a
 }
    
 //F
-   function CreateCookie(){
-      var data = 'expires=Thu, 18 Dec 2099 12:00:00 UTC'
+   function CreateCookie(v){
+      var data = `expires=Thu, 18 Dec 20${v}9 12:00:00 UTC`
 
       document.cookie = TakeAllAtr() + ";" + data
    }
 
 //F
    function ReadCookie(){
-      var cookie = document.cookie.split(";")
-      alert(cookie)
-      return cookie;
+      var cookie = document.cookie
+      alert(cookie.split(","))
+      //return cookie;
    }
 
+/*
    function ClearCookie(){
       document.cookie = 'expires=Thu, 18 Dec 2009 12:00:00 UTC'
       alert("Cookies Limpos " + document.cookie)
    }
+*/
 
    </script>
 
