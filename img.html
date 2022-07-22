@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>ADD IMG</title>
+</head>
+<body>
+
+   <input type="file" id="select-img">
+   <button onclick="ShowImg()">Show Image</button>
+   <div id="show">
+
+   </div>
+
+
+   <script>
+
+function ShowImg(){
+   let local = document.getElementById("show")
+   let path = document.getElementById("select-img").value
+   local.innerHTML += `<img src="${path}" alt="None">`
+}
+
+   </script>
+
+</body>
+</html>
